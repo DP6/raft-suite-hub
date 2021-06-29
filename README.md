@@ -1,4 +1,4 @@
-# template-default-initiative-js
+# Raft Suite Hub
 
 <div align="center">
 <img src="https://raw.githubusercontent.com/DP6/templates-centro-de-inovacoes/main/public/images/centro_de_inovacao_dp6.png" height="100px" />
@@ -36,7 +36,7 @@
 </p>
 -->
 
-Respositório template para projetos NPM
+Respositório para o hub do raft suite
 
 - Testes unitários
 - Formatação de código
@@ -46,10 +46,8 @@ Respositório template para projetos NPM
 - Analise de qualidade de código
 - Github pages com template do github.dp6.io
 
-## Renomeando arquivos
+## TODO readme
 
-- Substituir o nome `template-default-initiative-js` pelo nome do novo repositório criado no arquivo package.json
-- Substituir a chave `{{nome_projeto}}` no arquivo `_config.yml` com o nome do projeto em linguagem natural, para ser usado como titulo da página no site.
 - No README.md as chaves `{{token-codacy}}` e `{{repo}}` localizada no cabecalho do documento dentro do comentário nas linhas 20-37 deve ser substituida pelo token do projeto no codacy.io e novo nome do repositório.
 
 ## Teste

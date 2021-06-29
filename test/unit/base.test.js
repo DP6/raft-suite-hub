@@ -12,7 +12,7 @@ const chai = require('chai');
 const expect = chai.expect;
 const uuid = require('uuid');
 
-const index = require('./../../index');
+const index = require('../../base');
 
 describe('Template Cloud Function', () => {
   describe('#templateCf()', () => {

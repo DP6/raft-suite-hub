@@ -1,11 +1,11 @@
 {
-  "name": "template-default-initiative-js",
+  "name": "raft-suite-hub",
   "private": "true",
   "version": "0.1.0",
   "description": "Google Cloud Function",
   "repository": {
     "type": "git",
-    "url": "https://github.com/DP6/template-default-initiative-js.git"
+    "url": "https://github.com/DP6/raft-suite-hub.git"
   },
   "main": "index.js",
   "scripts": {
@@ -17,23 +17,28 @@
     "all-test": "npm run unit-test",
     "test": "npm -- run all-test",
     "coverage": "nyc --reporter=lcov --reporter=cobertura npm run unit-test",
-    "docs": "jsdoc2md index.js > docs/index.md"
+    "docs": "jsdoc2md index.js > docs/index.md",
+    "start": "npx @google-cloud/functions-framework --target=app",
+    "deploy": "gcloud functions deploy hub-raft-suite --runtime=nodejs14 --source=https://github.com/dp6/raft-suite-hub --trigger-http"
   },
   "author": "DP6",
   "contributors": [
     {
-      "name": "Joaquim Neto",
-      "email": "contato@joaquimsn.com"
+      "name": "1cadumagalhaes",
+      "email": "contato@cadumagalhaes.dev"
     }
   ],
   "license": "ISC",
   "keywords": [
-    "dp6"
+    "dp6",
+    "data-quality",
+    "cloud-functions",
+    "google-cloud"
   ],
   "bugs": {
-    "url": "https://github.com/DP6/template-default-initiative-js/issues"
+    "url": "https://github.com/DP6/raft-suite-hub/issues"
   },
-  "homepage": "https://github.com/DP6/template-default-initiative-js#readme",
+  "homepage": "https://github.com/DP6/raft-suite-hub#readme",
   "release": {
     "branch": "master",
     "plugins": [
@@ -50,8 +55,16 @@
       ]
     ]
   },
-  "dependencies": {},
+  "dependencies": {
+    "@google-cloud/bigquery": "^5.6.0",
+    "cors": "^2.8.5",
+    "cuid": "^2.1.8",
+    "express": "^4.17.1",
+    "firebase-admin": "^9.10.0",
+    "firebase-functions": "^3.14.1"
+  },
   "devDependencies": {
+    "@google-cloud/functions-framework": "^1.9.0",
     "chai": "^4.3.3",
     "child-process-promise": "^2.2.1",
     "eslint": "^7.22.0",
