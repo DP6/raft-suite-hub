@@ -14,7 +14,7 @@ let schemaExample = [
 /**
  * Returns a bigquery dataset. If it doesn't exist, creates a new and then returns.
  * @param {String} datasetId
- * @returns {Dataset} 
+ * @returns {Dataset}
  */
 async function getOrCreateDataset(datasetId) {
   const bq = new BigQuery();
