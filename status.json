@@ -1,0 +1,69 @@
+{
+  "00": {
+    "dimension": "Em análise",
+    "codes": {
+      "00": "Não há ocorrências"
+    }
+  },
+  "01": {
+    "dimension": "Disponibilidade",
+    "codes": {
+      "00": "Não há ocorrências",
+      "01": "Há um problema na disponibilização do UserID"
+    }
+  },
+  "02": {
+    "dimension": "Tempestividade",
+    "codes": {
+      "00": "Não há ocorrências"
+    }
+  },
+  "03": {
+    "dimension": "Completude",
+    "codes": {
+      "00": "Não há ocorrências"
+    }
+  },
+  "04": {
+    "dimension": "Quantidade",
+    "codes": {
+      "00": "Não há ocorrências"
+    }
+  },
+  "05": {
+    "dimension": "Validade",
+    "codes": {
+      "00": "Não há ocorrências"
+    }
+  },
+  "06": {
+    "dimension": "Consistencia",
+    "codes": {
+      "00": "Não há ocorrências"
+    }
+  },
+  "07": {
+    "dimension": "Acurácia",
+    "codes": {
+      "00": "Não há ocorrências"
+    }
+  },
+  "08": {
+    "dimension": "Uniformidade",
+    "codes": {
+      "00": "Não há ocorrências"
+    }
+  },
+  "09": {
+    "dimension": "Acessibilidade",
+    "codes": {
+      "00": "Não há ocorrências"
+    }
+  },
+  "10": {
+    "dimension": "Segurança",
+    "codes": {
+      "00": "Não há ocorrências"
+    }
+  }
+}
