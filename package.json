@@ -17,7 +17,7 @@
     "all-test": "npm run unit-test",
     "test": "npm -- run all-test",
     "coverage": "nyc --reporter=lcov --reporter=cobertura npm run unit-test",
-    "docs": "jsdoc2md index.js > docs/index.md",
+    "docs": "npx jsdoc2md index.js > docs/index.md",
     "start": "npx @google-cloud/functions-framework --target=app",
     "deploy": "gcloud functions deploy hub-raft-suite --runtime=nodejs14 --source=https://github.com/dp6/raft-suite-hub --trigger-http"
   },
@@ -70,7 +70,7 @@
     "eslint": "^7.22.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.3.1",
-    "jsdoc-to-markdown": "^7.0.0",
+    "jsdoc-to-markdown": "^7.0.1",
     "mocha": "^8.3.1",
     "nyc": "^15.1.0",
     "prettier": "2.3.2",
