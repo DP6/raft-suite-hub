@@ -1,0 +1,34 @@
+[
+  {
+    "name": "timestamp",
+    "type": "TIMESTAMP"
+  },
+  {
+    "name": "jobId",
+    "type": "STRING"
+  },
+  {
+    "name": "module",
+    "type": "STRING"
+  },
+  {
+    "name": "spec",
+    "type": "STRING"
+  },
+  {
+    "name": "deploy",
+    "type": "STRING"
+  },
+  {
+    "name": "version",
+    "type": "STRING"
+  },
+  {
+    "name": "status",
+    "type": "RECORD"
+  },
+  {
+    "name": "payload",
+    "type": "STRING"
+  }
+]
