@@ -25,4 +25,12 @@ describe.only('BigQuery helper', () => {
       expect(schema.type).to.equal(type);
     });
   });
+  it(`formatEntrie - Record fields`, () => {
+    let schema = formatEntrie([COLUMN_NAME, { a: 1 }]);
+    let { fields } = schema;
+    expect(fields).to.be.a('array');
+    let { name, type } = fields[0];
+    expect(name).to.equal('a');
+    expect(type).to.equal('INT64');
+  });
 });

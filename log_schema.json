@@ -8,6 +8,10 @@
     "type": "STRING"
   },
   {
+    "name": "project",
+    "type": "STRING"
+  },
+  {
     "name": "module",
     "type": "STRING"
   },
@@ -25,6 +29,24 @@
   },
   {
     "name": "status",
+    "fields": [
+      {
+        "name": "code",
+        "type": "STRING"
+      },
+      {
+        "name": "message",
+        "type": "STRING"
+      },
+      {
+        "name": "description",
+        "type": "STRING"
+      },
+      {
+        "name": "details",
+        "type": "STRING"
+      }
+    ],
     "type": "RECORD"
   },
   {

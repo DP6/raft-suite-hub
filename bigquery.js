@@ -58,6 +58,13 @@ async function insertRowsAsStream(rows, datasetId, tableName, schema) {
   }
 }
 
+/**
+ * Insert rows as load job at the given table and dataset.
+ * @param {Array} rows - Array of objects that will be inserted
+ * @param {*} datasetId
+ * @param {*} tableName
+ * @param {*} schema - Schema of the table, in case you need to create it.
+ */
 async function loadData(rows, datasetId, tableName, schema) {
   try {
     const metadata = {
@@ -80,6 +87,9 @@ async function loadData(rows, datasetId, tableName, schema) {
 
 function formatEntrie([key, value]) {
   let type = 'STRING';
+  let entry = {
+    name: key,
+  };
   if (typeof value === 'string') {
     let regex =
       /(?<date>\d{4}[-\/]\d{1,2}[-\/]\d{1,2})?[\sT]?(?<time>\d{1,2}:\d{1,2}:\d{1,2}\.?(\d{1,6})?)?(?<timezone>Z|([+-]\d{1,2}(:\d{2})?))?/;
@@ -97,11 +107,10 @@ function formatEntrie([key, value]) {
     type = Number.isInteger(value) ? 'INT64' : 'NUMERIC';
   } else if (typeof value === 'object') {
     type = 'RECORD';
+    entry.fields = generateSchema(value);
   }
-  return {
-    name: key,
-    type: type,
-  };
+  entry.type = type;
+  return entry;
 }
 
 function generateSchema(json) {
