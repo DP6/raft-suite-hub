@@ -1,5 +1,6 @@
 const cuid = require('cuid');
 const status = require('./status.json');
+const { version } = require('./package.json');
 
 function getStatusMessage(statusCode) {
   let [dimension, code] = statusCode.split('-');
@@ -35,16 +36,16 @@ function hubMessage(body) {
   return {
     timestamp: new Date().toISOString(),
     jobId: cuid(),
-    project: project,
-    module: module,
-    spec: spec,
-    deploy: deploy,
-    version: '0.0.1',
+    project,
+    module,
+    spec,
+    deploy,
+    version,
     status: {
-      code: code,
+      code,
       message: getStatusMessage(code),
-      description: description,
-      details: details,
+      description,
+      details,
     },
     payload: JSON.stringify(payload),
   };

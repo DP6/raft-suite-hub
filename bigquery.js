@@ -18,23 +18,23 @@ let schemaExample = [
  */
 async function getOrCreateDataset(datasetId) {
   const bq = new BigQuery();
-  const dataset = await bq.dataset(datasetId).get({ autoCreate: true });
-  return dataset;
+  await bq.dataset(datasetId).get({ autoCreate: true });
+  return bq.dataset(datasetId);
 }
 
 async function getOrCreateTable({ datasetId, tableName, schema }) {
   try {
     const dataset = await getOrCreateDataset(datasetId);
-
     const options = {
       schema,
       location: 'US',
       type: 'TABLE',
     };
-    return dataset.table(tableName).get({
+    const table = await dataset.table(tableName).get({
       autoCreate: true,
       ...options,
     });
+    return dataset.table(tableName);
   } catch (error) {
     console.error(`Error getting table ${tableName}:`, error);
     throw new Error(error);
@@ -65,23 +65,29 @@ async function insertRowsAsStream(rows, datasetId, tableName, schema) {
  * @param {*} tableName
  * @param {*} schema - Schema of the table, in case you need to create it.
  */
-async function loadData(rows, datasetId, tableName, schema) {
+async function loadData(rows, datasetId, tableName) {
   try {
     const metadata = {
       sourceFormat: 'NEWLINE_DELIMITED_JSON',
       location: 'US',
       writeDisposition: 'WRITE_APPEND',
     };
-    const tempFilePath = path.join(os.tmpdir(), 'data.json');
     let data = rows instanceof Array ? rows : [rows];
+    const schema = generateSchema(data[0]);
     data = data.map((r) => JSON.stringify(r)).join('\n');
+
+    const tempFilePath = path.join(os.tmpdir(), 'data.json');
     fs.writeFileSync(tempFilePath, data);
     const table = await getOrCreateTable({ datasetId, tableName, schema });
+    console.info(`Trying to create load job with ${data.length} rows.`);
     await table.load(tempFilePath, metadata, (err, apiResponse) => {
-      if (err) throw new Error('Error loading job');
+      if (err) {
+        throw new Error(err);
+      }
     });
+    fs.unlinkSync(tempFilePath);
   } catch (error) {
-    console.error(`Error inserting ${rows.lenght} in ${tableId}. \n`, error);
+    console.error(`Error inserting ${rows.lenght || 1} row in ${tableName}. \n`, error);
   }
 }
 

@@ -12,5 +12,5 @@
     "description": "",
     "details": ""
   },
-  "payload": "{\"teste\":: \"Cadu\"}"
+  "payload": "{\"teste\": \"Cadu\"}"
 }

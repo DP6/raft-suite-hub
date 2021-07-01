@@ -3,11 +3,12 @@ const express = require('express');
 const cors = require('cors');
 const { insertRowAsStream, loadData } = require('./bigquery');
 const { hubMessage } = require('./message');
+const schema = require('./log_schema.json');
 
 const app = express();
 const port = 8000;
 const DATASET_ID = 'raft_suite',
-  TABLE_ID = 'record';
+  TABLE_ID = 'hub';
 
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
@@ -21,10 +22,10 @@ app.use(cors());
 app
   .route('/')
   .get(function (req, res) {
-    const message = JSON.stringify(hubMessage(), null, 2);
+    let message = hubMessage();
+    message = JSON.stringify(message, null, 2);
     const response = `This is a example message:\n${message}`;
     res.status(200).send(response);
-    loadData(message, DATASET_ID, TABLE_ID);
     console.log(message);
   })
   .post(function (req, res) {
@@ -41,6 +42,7 @@ app
       const data = hubMessage(body);
       res.status(200).send(data.jobId);
       console.log(JSON.stringify(data));
+      loadData(data, DATASET_ID, TABLE_ID);
     } catch (error) {
       res.status(400).send(error.toString());
       console.error(error);

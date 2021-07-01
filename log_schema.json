@@ -16,10 +16,6 @@
     "type": "STRING"
   },
   {
-    "name": "project",
-    "type": "STRING"
-  },
-  {
     "name": "spec",
     "type": "STRING"
   },

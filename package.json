@@ -1,7 +1,7 @@
 {
   "name": "raft-suite-hub",
   "private": "true",
-  "version": "0.1.5",
+  "version": "1.0.0",
   "description": "Google Cloud Function",
   "repository": {
     "type": "git",

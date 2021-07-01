@@ -1,6 +1,7 @@
 const { assert, expect } = require('chai');
 
 const { formatEntrie, generateSchema } = require('../../bigquery');
+const { hubMessage } = require('../../message');
 
 const COLUMN_NAME = 'Teste';
 const TYPES = [
@@ -32,5 +33,9 @@ describe.only('BigQuery helper', () => {
     let { name, type } = fields[0];
     expect(name).to.equal('a');
     expect(type).to.equal('INT64');
+  });
+  it('formatEntrie - Converte uma mensagem em schema', () => {
+    const message = hubMessage();
+    const schema = generateSchema(message);
   });
 });
