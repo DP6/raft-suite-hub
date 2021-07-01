@@ -19,7 +19,7 @@
     "coverage": "nyc --reporter=lcov --reporter=cobertura npm run unit-test",
     "docs": "npx jsdoc2md index.js > docs/index.md",
     "start": "npx @google-cloud/functions-framework --target=app",
-    "deploy": "gcloud functions deploy hub-raft-suite --runtime=nodejs14 --source=https://github.com/dp6/raft-suite-hub --trigger-http"
+    "deploy": "gcloud functions deploy hub-raft-suite --runtime=nodejs14 --sentry-point=app --trigger-http"
   },
   "author": "DP6",
   "contributors": [
