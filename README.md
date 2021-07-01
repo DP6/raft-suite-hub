@@ -8,12 +8,12 @@
   <a href="#badge">
     <img alt="semantic-release" src="https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg">
   </a>
-  <a href="https://www.codacy.com/gh/DP6/{{token-codacy}}/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=DP6/{{repo}}&amp;utm_campaign=Badge_Coverage"><img alt="Code coverage" src="https://app.codacy.com/project/badge/Coverage/{{token-codacy}}"/></a>
+  <a href="https://www.codacy.com/gh/DP6/a8ef88ae93a84efbae676f2fa0a4bebb/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=DP6/raft-suite-hub&amp;utm_campaign=Badge_Coverage"><img alt="Code coverage" src="https://app.codacy.com/project/badge/Coverage/a8ef88ae93a84efbae676f2fa0a4bebb"/></a>
   <a href="#badge">
     <img alt="Test" src="https://github.com/dp6/template-default-initiative-js/actions/workflows/test.yml/badge.svg">
   </a>
   <a href="https://www.codacy.com/gh/DP6/template-default-initiative-js/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=DP6/template-default-initiative-js&amp;utm_campaign=Badge_Grade">
-    <img alt="Code quality" src="https://app.codacy.com/project/badge/Grade/{{token-codacy}}">
+    <img alt="Code quality" src="https://app.codacy.com/project/badge/Grade/a8ef88ae93a84efbae676f2fa0a4bebb">
   </a>
 </p>
 
@@ -26,12 +26,12 @@
   <a href="#badge">
     <img alt="semantic-release" src="https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg">
   </a>
-  <a href="https://www.codacy.com/gh/DP6/{{token-codacy}}/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=DP6/{{repo}}&amp;utm_campaign=Badge_Coverage"><img alt="Code coverage" src="https://app.codacy.com/project/badge/Coverage/{{token-codacy}}"/></a>
+  <a href="https://www.codacy.com/gh/DP6/a8ef88ae93a84efbae676f2fa0a4bebb/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=DP6/raft-suite-hub&amp;utm_campaign=Badge_Coverage"><img alt="Code coverage" src="https://app.codacy.com/project/badge/Coverage/a8ef88ae93a84efbae676f2fa0a4bebb"/></a>
   <a href="#badge">
-    <img alt="Test" src="https://github.com/dp6/{{repo}}/actions/workflows/test.yml/badge.svg">
+    <img alt="Test" src="https://github.com/dp6/raft-suite-hub/actions/workflows/test.yml/badge.svg">
   </a>
-  <a href="https://www.codacy.com/gh/DP6/{{repo}}/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=DP6/{{repo}}&amp;utm_campaign=Badge_Grade">
-    <img alt="Code quality" src="https://app.codacy.com/project/badge/Grade/{{token-codacy}}">
+  <a href="https://www.codacy.com/gh/DP6/raft-suite-hub/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=DP6/raft-suite-hub&amp;utm_campaign=Badge_Grade">
+    <img alt="Code quality" src="https://app.codacy.com/project/badge/Grade/a8ef88ae93a84efbae676f2fa0a4bebb">
   </a>
 </p>
 -->
@@ -45,10 +45,6 @@ Respositório para o hub do raft suite
 - Cobertura de código
 - Analise de qualidade de código
 - Github pages com template do github.dp6.io
-
-## TODO readme
-
-- No README.md as chaves `{{token-codacy}}` e `{{repo}}` localizada no cabecalho do documento dentro do comentário nas linhas 20-37 deve ser substituida pelo token do projeto no codacy.io e novo nome do repositório.
 
 ## Teste
 
