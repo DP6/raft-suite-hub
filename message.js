@@ -2,6 +2,11 @@ const cuid = require('cuid');
 const status = require('./status.json');
 const { version } = require('./package.json');
 
+/**
+ * Transforms a status code on a message.
+ * @param {string} statusCode - raft suite status code, like "00-00"
+ * @returns {string} - formatted dimension and message
+ */
 function getStatusMessage(statusCode) {
   let [dimension, code] = statusCode.split('-');
   dimension = status[dimension];
@@ -10,6 +15,7 @@ function getStatusMessage(statusCode) {
 }
 
 /**
+ * Receives the body and returns the raft suite hub message.
  * @param {object} body - Request body
  * @param {string} [body.project=GCP Project] - Name of the project.
  * @param {string} body.module - Name of the module that sent the message.
@@ -22,7 +28,7 @@ function getStatusMessage(statusCode) {
  * @returns {Object} - Structured message.
  */
 function hubMessage(body) {
-  const project = process.env.GCLOUD_PROJECT || 'DP6';
+  const project = body.project || process.env.GCP_PROJECT || 'DP6';
   const { module, spec, deploy, code, description, details, payload } = {
     module: 'module',
     spec: 'spec',

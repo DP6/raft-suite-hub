@@ -3,12 +3,13 @@ const express = require('express');
 const cors = require('cors');
 const { insertRowAsStream, loadData } = require('./bigquery');
 const { hubMessage } = require('./message');
-const schema = require('./log_schema.json');
 
 const app = express();
 const port = 8000;
-const DATASET_ID = 'raft_suite',
-  TABLE_ID = 'hub';
+const env = process.env;
+const DATASET_ID = env.DATASET_ID || 'raft_suite',
+  TABLE_ID = env.TABLE_ID || 'hub',
+  INSERT_TYPE = env.INSERT_TYPE || 'batch';
 
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
@@ -42,7 +43,8 @@ app
       const data = hubMessage(body);
       res.status(200).send(data.jobId);
       console.log(JSON.stringify(data));
-      loadData(data, DATASET_ID, TABLE_ID);
+      if (INSERT_TYPE == 'stream') insertRowAsStream(data, DATASET_ID, TABLE_ID);
+      else loadData(data, DATASET_ID, TABLE_ID);
     } catch (error) {
       res.status(400).send(error.toString());
       console.error(error);

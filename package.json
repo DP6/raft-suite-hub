@@ -1,8 +1,7 @@
 {
   "name": "raft-suite-hub",
-  "private": "true",
   "version": "1.0.0",
-  "description": "Google Cloud Function",
+  "description": "DP6's data quality solution, responsible for saving data.",
   "repository": {
     "type": "git",
     "url": "https://github.com/DP6/raft-suite-hub.git"
@@ -19,7 +18,7 @@
     "coverage": "nyc --reporter=lcov --reporter=cobertura npm run unit-test",
     "docs": "npx jsdoc2md index.js > docs/index.md",
     "start": "npx @google-cloud/functions-framework --target=app",
-    "deploy": "gcloud functions deploy hub-raft-suite --runtime=nodejs14 --sentry-point=app --trigger-http"
+    "deploy": "gcloud functions deploy hub-raft-suite --runtime=nodejs14 --entry-point=app --trigger-http"
   },
   "author": "DP6",
   "contributors": [
