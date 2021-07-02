@@ -1,7 +1,7 @@
 # Raft Suite Hub
 
 <div align="center">
-<img src="https://raw.githubusercontent.com/DP6/templates-centro-de-inovacoes/main/public/logos-iniciativas/raft-suite-hub.png" height="100px" />
+<img src="https://raw.githubusercontent.com/DP6/templates-centro-de-inovacoes/main/public/images/centro_de_inovacao_dp6.png" height="100px" />
 </div>
 
 <p align="center">
