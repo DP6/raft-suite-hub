@@ -58,7 +58,7 @@ O **Hub** é a solução responsável por centralizar a **consolidação** dos d
    ```shell
     git clone https://github.com/DP6/raft-suite-hub.git
    ```
-  
+
 3. Em seguida, navegue para a pasta e use o comando deploy
 
    ```shell
@@ -77,23 +77,23 @@ O **Hub** é a solução responsável por centralizar a **consolidação** dos d
 
 Para utilizar, é preciso fazer uma requisição POST para a cloud function com um json no body. Por exemplo, em Node com [axios](https://github.com/axios/axios):
 
-   ```js
-    const axio = require('axios');
-    let body = {
-      module: 'penguin-datalayer-collect',
-      spec: 'dp6_site',
-      deploy: '2.0.0',
-      code: '01-00',
-      description: 'Saving collect data',
-      payload: {
-        status: 'OK',
-        objectName: 'event',
-        keyName: 'eventCategory',
-        message: '',
-      },
-    };
-    axios.post('https://us-central1-dp6-brasil.cloudfunctions.net/hub-raft-suite', body);
-   ```
+```js
+const axio = require('axios');
+let body = {
+  module: 'penguin-datalayer-collect',
+  spec: 'dp6_site',
+  deploy: '2.0.0',
+  code: '01-00',
+  description: 'Saving collect data',
+  payload: {
+    status: 'OK',
+    objectName: 'event',
+    keyName: 'eventCategory',
+    message: '',
+  },
+};
+axios.post('https://us-central1-dp6-brasil.cloudfunctions.net/hub-raft-suite', body);
+```
 
 ### 3.1 Schema da tabela
 
@@ -112,6 +112,7 @@ Para utilizar, é preciso fazer uma requisição POST para a cloud function com 
 ## 4. Observações
 
 Por padrão, as cloud functions do tipo http só podem ser executadas com autenticação. Por isso, a requisição post precisa ser feita de um local autenticado, ou com o token de autenticação.
+
 ## Como contribuir
 
 Pull requests são bem-vindos! Nós vamos adorar ajuda para evoluir esse modulo. Sinta-se livre para navegar por issues abertas buscando por algo que possa fazer. Caso tenha uma nova feature ou bug, por favor abra uma nova issue para ser acompanhada pelo nosso time.
