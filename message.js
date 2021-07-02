@@ -28,7 +28,7 @@ function getStatusMessage(statusCode) {
  * @returns {Object} - Structured message.
  */
 function hubMessage(body) {
-  const project = body.project || process.env.GCP_PROJECT || 'DP6';
+  const project = body?.project || process.env.GCP_PROJECT || 'DP6';
   const { module, spec, deploy, code, description, details, payload } = {
     module: 'module',
     spec: 'spec',
