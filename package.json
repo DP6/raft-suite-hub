@@ -55,7 +55,7 @@
     ]
   },
   "dependencies": {
-    "@google-cloud/bigquery": "^5.6.0",
+    "@google-cloud/bigquery": "^5.7.1",
     "cors": "^2.8.5",
     "cuid": "^2.1.8",
     "express": "^4.17.1",
