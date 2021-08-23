@@ -59,7 +59,7 @@
     "cors": "^2.8.5",
     "cuid": "^2.1.8",
     "express": "^4.17.1",
-    "firebase-admin": "^9.10.0",
+    "firebase-admin": "^9.11.1",
     "firebase-functions": "^3.14.1"
   },
   "devDependencies": {
