@@ -40,10 +40,8 @@ app
       required_keys = required_keys.filter(keyNotInObject);
       if (required_keys.length > 0) throw new Error(`Missing required keys: ${required_keys.join(', ')}`);
       let data;
-      if (body instanceof Array)
-        data = body.map(i => hubMessage(i));
-      else
-        data = hubMessage(body);
+      if (body instanceof Array) data = body.map((i) => hubMessage(i));
+      else data = hubMessage(body);
       res.status(200).send(data.jobId);
       console.log(JSON.stringify(data));
       if (INSERT_TYPE == 'stream') insertRowsAsStream(data, DATASET_ID, TABLE_ID);
